@@ -16,4 +16,5 @@ public class Main {
     public static void test2() {
         int a = 1 / 0;
     }
+    System.out.println("rrr")
 }
