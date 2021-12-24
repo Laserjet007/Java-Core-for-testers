@@ -37,7 +37,7 @@ public class GenBox<T> {
         GenBox genBox = new GenBox(5);
         Integer a = new Integer(5);
         Number b = a;
-        //List<Integer> integerArrayList = new ArrayList<>();
+        // List<Integer> integerArrayList = new ArrayList<>();
         //ArrayList<Number> numberArrayList = integerArrayList;
     }
 }
