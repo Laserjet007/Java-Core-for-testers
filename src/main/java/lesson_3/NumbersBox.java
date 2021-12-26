@@ -34,10 +34,30 @@ public class NumbersBox<T extends Number> {
         return sum / array.length;
     }
 
+    public boolean isSameAvg(NumbersBox<?> boxToCompare) {
+        return Math.abs(calcAverage() - boxToCompare.calcAverage()) < 0.0001;
+    }
+
+    public static <U extends Number> U getFirstElement(NumbersBox<U> numbersBox) {
+        return numbersBox.getArray()[0];
+    }
 
     public static void main(String[] args) {
-         NumbersBox<Integer> integerNumbersBox1 = new NumbersBox<>(1,2,3,5,6,4,4);
-         System.out.println(integerNumbersBox1.calcAverage());
+        NumbersBox<Integer> integerNumbersBox1 = new NumbersBox<>(1,2,3,5,6,4,4);
+        System.out.println(integerNumbersBox1.calcAverage());
+
+        NumbersBox<Integer> integerNumbersBox2 = new NumbersBox<>(1,2,3,5,6,4,4);
+
+        System.out.println(integerNumbersBox1.isSameAvg(integerNumbersBox2));
+
+        NumbersBox<Double> doubleNumbersBox1 = new NumbersBox<>(1.0, 4.0, 2.6, 8.9);
+
+        System.out.println(integerNumbersBox1.isSameAvg(doubleNumbersBox1));
+
+
     }
+
+
+
 
 }
