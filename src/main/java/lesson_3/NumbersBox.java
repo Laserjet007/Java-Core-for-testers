@@ -54,6 +54,7 @@ public class NumbersBox<T extends Number> {
 
         System.out.println(integerNumbersBox1.isSameAvg(doubleNumbersBox1));
 
+        System.out.println(getFirstElement(doubleNumbersBox1));
 
     }
 
