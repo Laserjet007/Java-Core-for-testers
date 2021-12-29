@@ -1,6 +1,7 @@
 package lesson_4;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class ArrayListExamples {
     public static void main(String[] args) {
@@ -22,7 +23,19 @@ public class ArrayListExamples {
         integerArrayList.add(1, 888);     //add удаляет элементы
         System.out.println(integerArrayList);
 
-        System.out.println(integerArrayList.contains(new Integer(888)));  //поиск по элементу
+        integerArrayList.get(1); //взять элемент из определенного места
+
+        System.out.println(integerArrayList.contains(new Integer(888)));  //поиск по элемент//
+        System.out.println(integerArrayList.indexOf(new Integer(888)));   // найти элемент по индексу
+
+        ArrayList<Integer> integerArrayList1 = new ArrayList<>(Arrays.asList(123, 456));//удалять пачками элементы под списками
+        integerArrayList.removeAll(integerArrayList1);
+
+        System.out.println(integerArrayList);
+
+
 
     }
+
+
 }
