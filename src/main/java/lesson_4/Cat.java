@@ -1,10 +1,8 @@
 package lesson_4;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Objects;
+import java.util.*;
 
-public class Cat {
+public class Cat implements Comparable<Cat> {
     private String  name;
     private int age;
     private  int weight;
@@ -80,7 +78,32 @@ public class Cat {
         HashSet<Cat> catHashSet = new HashSet<>(Arrays.asList(cat1, cat2, cat3, cat4));// сравнение хешей обьектов
         System.out.println(catHashSet);
 
+        HashSet<Integer> integerHashSet= new HashSet<>(Arrays.asList(1, 3, 5, 6, 7, 22, 4, 1 ,6)); // пример с хеш линком - убедиться что там у нас сохраняется порядок и отбрасывается все лишнее
+        System.out.println(integerHashSet);
 
+        LinkedHashSet<Integer> integerLinkedHashSet = new LinkedHashSet<>(Arrays.asList(1, 3, 5, 6, 7, 22, 4, 1 ,6));
+        System.out.println(integerLinkedHashSet);
+
+        TreeSet<Integer> integerTreeSet = new TreeSet<>(Arrays.asList(1, 3, 5, 6, 7, 22, 4, 1 ,6));
+        System.out.println(integerTreeSet);
+
+        TreeSet<Cat> catTreeSet = new TreeSet<>(Arrays.asList(cat1, cat2, cat3, cat4));//сравнить по дереву
+        System.out.println(catTreeSet);
+
+        TreeSet<Cat> catTreeSet1 = new TreeSet<>(new CatComparatorByWeight());
+        catTreeSet1.add(cat1);
+        catTreeSet1.add(cat2);
+        catTreeSet1.add(cat3);
+        catTreeSet1.add(cat4);
+
+        System.out.println(catTreeSet1);
 
     }
+
+    @Override
+    public int compareTo(Cat o) {
+        return weight - o.getWeight();
+    }
+
+
 }

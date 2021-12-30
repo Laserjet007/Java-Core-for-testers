@@ -33,8 +33,8 @@ public class ArrayListExamples {
 
         System.out.println(integerArrayList);
 
-
-
+        integerArrayList.addAll(integerArrayList);//вставить пачками элементы
+        System.out.println(integerArrayList);
     }
 
 
