@@ -21,6 +21,18 @@ public class HashMapExamples {  //HashMap коллекция хранит пар
 
         System.out.println(passports);
 
+        passports.remove(2344);// удалить значение по ключу
+        System.out.println(passports);
+
+        System.out.println(passports.get(1234));//вывод значения по ключу
+
+        for (Integer passNum : passports.keySet()) {
+            if(passNum == 1234) {
+                passports.remove(passNum);
+            }
+        }
+
+        System.out.println(passports);
     }
 
 }
