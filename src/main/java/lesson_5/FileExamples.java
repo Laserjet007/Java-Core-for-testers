@@ -22,6 +22,9 @@ public class FileExamples {
         File filePath1 = new File("2/1/3/5");//создать папки  2 1 3 5 в иерархии от 2 и далее каждая папка вложена в предидущую
         filePath1.mkdirs();
 
-        System.out.println(filePath1);//вывести в консоль путь папок
+        System.out.println(filePath1.length());//вывести в консоль путь папок
+
+        for(File fileTemp : filePath1.listFiles()) {//пройтись по иерархии папок и проверить что в них
+            System.out.println(fileTemp.getName());}
     }
 }
