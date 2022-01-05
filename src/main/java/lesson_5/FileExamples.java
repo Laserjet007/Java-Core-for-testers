@@ -24,7 +24,7 @@ public class FileExamples {
 
         System.out.println(filePath1.length());//вывести в консоль путь папок
 
-        for(File fileTemp : filePath1.listFiles()) {//пройтись по иерархии папок и проверить что в них
+        for(File fileTemp : filePath1.listFiles()) {//пройтись по иерархии папок и проверить что в них (названия , типы, просто распечатать)
             System.out.println(fileTemp.getName());}
     }
 }
