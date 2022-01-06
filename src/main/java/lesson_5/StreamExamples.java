@@ -17,12 +17,18 @@ public class StreamExamples {
 
         File file = new File("our_example.txt"); // создаем файл
 
-       try (OutputStream stream = new FileOutputStream(file)){// можно в новой версии джавы обьявить поток а затем его и открыть
+        OutputStream stream = null;//вариант закрытия программы с обычным траем, без библиотек джавы
+        try {// обработка исключений
+            stream = new FileOutputStream(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
 
-       } catch (FileNotFoundException e) {
+       /*try (OutputStream stream = new FileOutputStream(file)){// можно в новой версии джавы обьявить поток а затем его и открыть
+       } catch (FileNotFoundException e) {//для перекрытия потка необходимо его закрывать так как может подсасывать память или вообще блокернуть файл
            e.printStackTrace();
        } catch (IOException e) {
            e.printStackTrace();
-       }
+       }*/
     }
 }
