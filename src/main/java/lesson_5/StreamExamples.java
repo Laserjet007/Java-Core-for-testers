@@ -72,11 +72,12 @@ public class StreamExamples {
         System.out.println("время затраченное на запись 5 мг" + (System.currentTimeMillis() - time));*/
 
 // вариант быстрее:
-        long time1 = System.currentTimeMillis();//замерить время записи большого файла 5 мб (второй способ быстрее передать файл в поток)
+        long time1 = System.currentTimeMillis();//замерить время записи большого файла 5 мб (второй способ быстрее передать файл в поток(воспользоваться буфером)
 
         try (OutputStream outputStream1 = new BufferedOutputStream(new FileOutputStream(file))) {
             for (int i = 0; i < 5 * 1024 * 1024; i++) { // от 0 до 1000000 ( i меньше 0 и меньше 5 умножить на килобайт и еще раз на килобайт
                 outputStream1.write(65);
+                outputStream1.flush();   // сброс (очистка буфера)
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -84,7 +85,7 @@ public class StreamExamples {
             e.printStackTrace();
         }
 
-        System.out.println("время затраченное на запись 5 мг" + (System.currentTimeMillis() - time1));
+        System.out.println("время затраченное на запись 5 мг с буфером " + (System.currentTimeMillis() - time1));
 
 
 
