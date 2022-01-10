@@ -87,7 +87,7 @@ public class StreamExamples {
 
         System.out.println("время затраченное на запись 5 мг с буфером " + (System.currentTimeMillis() - time1));
 
-
+//вариант как прочитать из файла
         byte[] bytes = null;//массив содержащий набор байт
 
         try {
@@ -102,5 +102,24 @@ public class StreamExamples {
         }
         System.out.println(new String(bytes, StandardCharsets.UTF_8)); //вывести байты в любой кодировке из массива  в консоль
 
+//вариант как прочитать из файла
+
+
+        try (InputStream inputStream = new FileInputStream("1.txt")) {  //разница с предидущим примером что мы брали там массив а тут пройтем цикл для посимвоьного чтения
+
+            for (int i = 0; i < new File ("1.txt").length(); i++){//цыкл фор (читать до длинны файла)
+                System.out.println(i + ": " + (char) inputStream.read());//по байтово читаем и преобразовываем в чар
+            }
+
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
     }
-}
+
+    }
+
