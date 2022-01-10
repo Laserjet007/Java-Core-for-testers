@@ -77,7 +77,7 @@ public class StreamExamples {
         try (OutputStream outputStream1 = new BufferedOutputStream(new FileOutputStream(file))) {
             for (int i = 0; i < 5 * 1024 * 1024; i++) { // от 0 до 1000000 ( i меньше 0 и меньше 5 умножить на килобайт и еще раз на килобайт
                 outputStream1.write(65);
-                outputStream1.flush();   // сброс (очистка буфера)
+                //outputStream1.flush();   // сброс (очистка буфера)
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -88,6 +88,19 @@ public class StreamExamples {
         System.out.println("время затраченное на запись 5 мг с буфером " + (System.currentTimeMillis() - time1));
 
 
+        byte[] bytes = null;//массив содержащий набор байт
+
+        try {
+            InputStream inputStream = new FileInputStream("1.txt");
+            bytes = new byte[inputStream.available()];//заполняем массив
+            inputStream.read(bytes);//байтами
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println(new String(bytes, StandardCharsets.UTF_8)); //вывести байты в любой кодировке из массива  в консоль
 
     }
 }
