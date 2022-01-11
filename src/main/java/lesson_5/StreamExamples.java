@@ -5,6 +5,8 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
+//байтовые потоки
+
 public class StreamExamples {
     public static void main(String[] args) {
         String tempString = "кот";
