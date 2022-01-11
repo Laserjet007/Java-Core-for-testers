@@ -1,6 +1,6 @@
 package lesson_5;
 
-//символьные потоки
+//символьные потоки (возможности использования)
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -27,7 +27,7 @@ public class ReaderWriterExamples {
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader("1.txt"))) {
             System.out.println(bufferedReader.readLine()); //прочитать строчку и вывести
 
-        } catch (FileNotFoundException e){
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
@@ -35,24 +35,35 @@ public class ReaderWriterExamples {
 
         ArrayList<Student> students = new ArrayList<>();
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader("students.txt"))) {
-             String temp;
+            String temp;
 
-             while ((temp = bufferedReader.readLine()) != null) {//в цикле ваилд считать посторочно и парсить
-                 String[] studentParamsArray = temp.split(" ");  // поделить строку на пробелы как в файле
-                 students.add(new Student(studentParamsArray[0],
-                         studentParamsArray[1], Integer.parseInt(studentParamsArray[2]))); //создаем новые обьекты и передаем в них
+            while ((temp = bufferedReader.readLine()) != null) {//в цикле ваилд считать посторочно и парсить
+                String[] studentParamsArray = temp.split(" ");  // поделить строку на пробелы как в файле
+                students.add(new Student(studentParamsArray[0],
+                        studentParamsArray[1], Integer.parseInt(studentParamsArray[2]))); //создаем новые обьекты и передаем в них
             }
-        }catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
-        }catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
         System.out.println(students);
 
+//запишим в файл
 
-//запишим параметры в вайл
-        //прочитаем параметры
+        try (PrintWriter printWriter = new PrintWriter("new_students.csv")) {
+            for (Student student : students) {//возмем файл студентс
+                printWriter.println(student);
+            }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
 
     }
-    }
+//вариант передачи обьекта ссылочного типа
+
+
+}
