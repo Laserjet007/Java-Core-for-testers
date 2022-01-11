@@ -4,6 +4,7 @@ package lesson_5;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 
 public class ReaderWriterExamples {
     public static void main(String[] args) throws FileNotFoundException {     //точка входа
@@ -31,5 +32,27 @@ public class ReaderWriterExamples {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        ArrayList<Student> students = new ArrayList<>();
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader("students.txt"))) {
+             String temp;
+
+             while ((temp = bufferedReader.readLine()) != null) {//в цикле ваилд считать посторочно и парсить
+                 String[] studentParamsArray = temp.split(" ");  // поделить строку на пробелы как в файле
+                 students.add(new Student(studentParamsArray[0],
+                         studentParamsArray[1], Integer.parseInt(studentParamsArray[2]))); //создаем новые обьекты и передаем в них
+            }
+        }catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println(students);
+
+
+//запишим параметры в вайл
+        //прочитаем параметры
+
     }
-}
+    }

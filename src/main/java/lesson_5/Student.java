@@ -5,9 +5,9 @@ package lesson_5;
 public class Student {
     private  String nameOfStudent;
     private  String surname;
-    private  String age;
+    private int age;
 
-    public Student(String nameOfStudent, String surname, String age) {// конструктор
+    public Student(String nameOfStudent, String surname, int age) {// конструктор
         this.nameOfStudent = nameOfStudent;
         this.surname = surname;
         this.age = age;
@@ -29,11 +29,11 @@ public class Student {
         this.surname = surname;
     }
 
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
@@ -44,5 +44,9 @@ public class Student {
                 ", surname='" + surname + '\'' +
                 ", age='" + age + '\'' +
                 '}';
+
+
+
+
     }
 }
