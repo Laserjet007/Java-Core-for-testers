@@ -63,7 +63,7 @@ public class ReaderWriterExamples {
 
 
     }
-//вариант передачи обьекта ссылочного типа
+
 
 
 }
