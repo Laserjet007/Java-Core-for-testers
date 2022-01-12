@@ -2,7 +2,9 @@ package lesson_5;
 
 //пример как прать, читать параметры обьекта
 
-public class Student {
+import java.io.Serializable;
+
+public class Student implements Serializable {//чля того что бы читать из serializacionexample параметры обьекта имплементируем (пометим что он сериализуем)
     private  String nameOfStudent;
     private  String surname;
     private int age;
