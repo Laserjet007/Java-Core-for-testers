@@ -17,6 +17,17 @@ public class Student implements Serializable {//чля того что бы чи
         this.age = age;
     }
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                "nameOfStudent='" + nameOfStudent + '\'' +
+                ", surname='" + surname + '\'' +
+                ", age=" + age +
+                ", sberCart='" + sberCart + '\'' +
+                ", friendName='" + friendName + '\'' +
+                '}';
+    }
+
     public String getSberCart() {
         return sberCart;
     }
@@ -65,16 +76,4 @@ public class Student implements Serializable {//чля того что бы чи
         this.age = age;
     }
 
-    @Override
-    public String toString() {
-        return "Student{" +
-                "nameOfStudent='" + nameOfStudent + '\'' +
-                ", surname='" + surname + '\'' +
-                ", age='" + age + '\'' +
-                '}';
-
-
-
-
-    }
 }
