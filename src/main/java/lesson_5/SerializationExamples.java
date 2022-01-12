@@ -24,5 +24,26 @@ public class SerializationExamples {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+    //вариант чтения переданного обьекта
+
+        try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream((file)))) {
+             Student studentFromFile1 = (Student) objectInputStream.readObject();//читаем файл  (Student)- приводим к обекту увевщись что он обжект
+             System.out.println(studentFromFile1);
+            Student studentFromFile2 = (Student) objectInputStream.readObject();//читаем файл  (Student)- приводим к обекту увевщись что он обжект
+            System.out.println(studentFromFile2);
+            Student studentFromFile3 = (Student) objectInputStream.readObject();//читаем файл  (Student)- приводим к обекту увевщись что он обжект
+            System.out.println(studentFromFile3);
+            Student studentFromFile4 = (Student) objectInputStream.readObject();//читаем файл  (Student)- приводим к обекту увевщись что он обжект
+            System.out.println(studentFromFile4);
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
     }
 }
