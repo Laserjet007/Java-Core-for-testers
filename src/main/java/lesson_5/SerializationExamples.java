@@ -25,7 +25,7 @@ public class SerializationExamples {
             e.printStackTrace();
         }
 
-    //вариант чтения переданного обьекта
+    //вариант чтения переданного до этого обьекта, так как нужно в данный момент
 
         try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream((file)))) {
              Student studentFromFile1 = (Student) objectInputStream.readObject();//читаем файл  (Student)- приводим к обекту увевщись что он обжект

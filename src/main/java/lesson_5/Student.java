@@ -8,11 +8,37 @@ public class Student implements Serializable {//чля того что бы чи
     private  String nameOfStudent;
     private  String surname;
     private int age;
+    private transient String sberCart = "1234 4567 8901 2345"; // transient - закрываем параметры в серилизации
+    private String friendName;
 
     public Student(String nameOfStudent, String surname, int age) {// конструктор
         this.nameOfStudent = nameOfStudent;
         this.surname = surname;
         this.age = age;
+    }
+
+    public String getSberCart() {
+        return sberCart;
+    }
+
+    public void setSberCart(String sberCart) {
+        this.sberCart = sberCart;
+    }
+
+    public String getFriendName() {
+        return friendName;
+    }
+
+    public void setFriendName(String friendName) {
+        this.friendName = friendName;
+    }
+
+    public Student(String nameOfStudent, String surname, int age, String sberCart, String friendName) {
+        this.nameOfStudent = nameOfStudent;
+        this.surname = surname;
+        this.age = age;
+        this.sberCart = sberCart;
+        this.friendName = friendName;
     }
 
     public String getNameOfStudent() {
