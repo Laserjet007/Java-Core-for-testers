@@ -1,14 +1,9 @@
 package lesson_6.socketexamples;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.net.ServerSocket;
-import java.net.Socket;
-//вариант когда сервет получает строчку и отправляет ее обратно (простенький сервер)
+/*вариант когда сервет получает строчку и отправляет ее обратно (простенький сервер)
 public class ServerApp {
     public static void main(String[] args) {
-        try (ServerSocket serverSocket = new ServerSocket(0000)) {  //сокет из сервера (обозначается виртуальный порт цифрами)
+        try (ServerSocket serverSocket = new ServerSocket(2222)) {  //сокет из сервера (обозначается виртуальный порт цифрами)
             System.out.println("Server Work! ожидает соединения");
 
             Socket socket = serverSocket.accept();//чтобы достроить соединение открываем просто сокет
@@ -31,4 +26,4 @@ public class ServerApp {
         }
 
     }
-}
+}*/

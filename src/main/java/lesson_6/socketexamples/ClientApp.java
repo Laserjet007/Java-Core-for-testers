@@ -1,18 +1,11 @@
 package lesson_6.socketexamples;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.net.Socket;
-import java.net.UnknownHostException;
-import java.util.Scanner;
-
-//задача клиента отправить строку на сервер и ожидать ответа обратно (делаем простенько из консоли ввод)
+/*задача клиента отправить строку на сервер и ожидать ответа обратно (делаем простенько из консоли ввод)
 public class ClientApp {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);//указываем поток из которого сканер будет получать (наша консолька)
 
-        try (Socket socket = new Socket("localhost", 0000)) {//открываем трубочку ( сокет) до сервера
+        try (Socket socket = new Socket("localhost", 2222)) {//открываем трубочку ( сокет) до сервера
             DataOutputStream dataOutputStream = new DataOutputStream(socket.getOutputStream()); //привязываем к сокету поток data
             DataInputStream dataInputStream = new DataInputStream(socket.getInputStream());// к выходу привязываем ( на примере показано как можно брать из сокета и отправл
 
@@ -36,4 +29,4 @@ public class ClientApp {
 
 
     }
-}
+}*/
