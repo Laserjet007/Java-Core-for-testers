@@ -2,7 +2,7 @@ package lesson_6;
 
 //подключение по url  адрксу
 
-/*import java.net.MalformedURLException;
+import java.net.MalformedURLException;
 import java.net.URL;
 
 public class URLExamples {
@@ -14,4 +14,3 @@ public class URLExamples {
 
     }
 }
-*/
