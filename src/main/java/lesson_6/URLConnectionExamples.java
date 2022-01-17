@@ -1,4 +1,4 @@
-package lesson_6;
+/*package lesson_6;
 
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -27,9 +27,10 @@ public class URLConnectionExamples {
         httpURLConnection.setDoOutput(true);//получить ответ
 
         String requestBody = "{\n" +               //формируем тело запроса  вориате  json (пары : члюч:значение экранируем под джава \n  \) и передаем его
-                             "  \"username\":\"admin\",n" +
-                             "  \"password\":\"password123\n" +
+                             "  \"username\":\"admin\",\n" +
+                             "  \"password\":\"password123\"\n" +
                              "   }";
+
         BufferedWriter bufferedWriter = BufferedWriter(  //вставляем в запрос реквестбоди
                 new OutputStreamWriter(httpURLConnection.getOutputStream());
 
@@ -44,4 +45,6 @@ public class URLConnectionExamples {
 
         }
     }
-}
+}*/
+
+// получаем ответ в виде джейсона
