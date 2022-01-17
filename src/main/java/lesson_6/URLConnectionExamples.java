@@ -18,15 +18,15 @@ public class URLConnectionExamples {
          bufferedReader.close();//закрываем поток что бы не делать трай кетч
 
     //еще один пример на примере бронировани отеля: передаем параметры в теле запроса
-        URL url1 = new URL("https://restful-booker.herokuapp.com/auth");//зтот сервис требует работы в аштиэмэль запросе
+        URL url1 = new URL("https://restful-booker.herokuapp.com/auth");//зтот сервис требует работы в аштиэмэль запросе - подключаемся к адресу
 
-        HttpURLConnection httpURLConnection = (HttpURLConnection) url1.openConnection();// в теле запроса передаем джейсон с аутивеникацией. соединение с помощью аштитипи запроса
-
+        HttpURLConnection httpURLConnection = (HttpURLConnection) url1.openConnection();// в теле запроса передаем джейсон с аутивеникацией. соединение с помощью аштитипи запроса (создаем конекшен)
+         //проставляем некие параметры:
         httpURLConnection.setRequestProperty("Content-Type", "application/json");//сформировываем https конекшен (ключ значение) , то зто запрашиваем берется из апи описания
         httpURLConnection.setRequestMethod("POST"); //отправим логин пароль и со стороны сервера создасться токен (ключ по которому будем дальше стучаться)
         httpURLConnection.setDoOutput(true);//получить ответ
 
-        String requestBody = "{\n" +               //формируем тело запроса  вориате  json (пары : члюч:значение экранируем под джава \n  \)
+        String requestBody = "{\n" +               //формируем тело запроса  вориате  json (пары : члюч:значение экранируем под джава \n  \) и передаем его
                              "  \"username\":\"admin\",n" +
                              "  \"password\":\"password123\n" +
                              "   }";
@@ -38,7 +38,10 @@ public class URLConnectionExamples {
                 BufferedReader bufferedReader1 = new BufferedReader(
                         new InputStreamReader(httpURLConnection.getInputStream()));//получение ответа. передаем входной поток
 
-        //считывае ответ
+        String temp; //куда сохранять
+            while ((temp = bufferedReader1.readLine()) != null); { //считывае ответ
+            System.out.println(temp);
 
+        }
     }
 }
