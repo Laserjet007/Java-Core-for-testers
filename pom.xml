@@ -7,40 +7,38 @@
     <groupId>org.example</groupId>
     <artifactId>ismailova_progect</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <dependencies>
-    <dependency>
-            <groupId>org.jetbrains</groupId>
-            <artifactId>annotations</artifactId>
-            <version>RELEASE</version>
-            <scope>compile</scope>
-
-        </dependency>
 
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-    </properties>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+</properties>
+    <dependencies>
+    <dependency>
+        <groupId>org.jetbrains</groupId>
+        <artifactId>annotations</artifactId>
+        <version>RELEASE</version>
+        <scope>compile</scope>
+
+    </dependency>
 
 
+    <dependencies>
+        <!-- add the junit dependency here -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.7.0</version>
+            <scope>test</scope>
+        </dependency>
 
-<dependencies>
+    </dependencies>
+    <!-- https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp -->
+     <dependency>
+        <groupId>com.squareup.okhttp3</groupId>
+        <artifactId>okhttp</artifactId>
+        <version>4.9.3</version>
 
-<!-- add the junit dependency here -->
-<dependency>
-    <groupId>org.junit.jupiter</groupId>
-    <artifactId>junit-jupiter-api</artifactId>
-    <version>5.7.0</version>
-    <scope>test</scope>
-</dependency>
-
-</dependencies>
-        <!-- https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp -->
-<dependency>
-<groupId>com.squareup.okhttp3</groupId>
-<artifactId>okhttp</artifactId>
-<version>4.9.3</version>
-
-</dependency>
+    </dependency>
 
 </project>
