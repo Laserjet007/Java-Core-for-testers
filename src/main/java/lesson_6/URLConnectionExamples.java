@@ -1,9 +1,6 @@
 package lesson_6;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
@@ -22,9 +19,26 @@ public class URLConnectionExamples {
 
     //еще один пример на примере бронировани отеля: передаем параметры в теле запроса
         URL url1 = new URL("https://restful-booker.herokuapp.com/auth");//зтот сервис требует работы в аштиэмэль запросе
-     HttpURLConnection// в теле запроса передаем джейсон с аутивеникацией. соединение с помощью аштитипи запроса
 
+        HttpURLConnection httpURLConnection = (HttpURLConnection) url1.openConnection();// в теле запроса передаем джейсон с аутивеникацией. соединение с помощью аштитипи запроса
 
+        httpURLConnection.setRequestProperty("Content-Type", "application/json");//сформировываем https конекшен (ключ значение) , то зто запрашиваем берется из апи описания
+        httpURLConnection.setRequestMethod("POST"); //отправим логин пароль и со стороны сервера создасться токен (ключ по которому будем дальше стучаться)
+        httpURLConnection.setDoOutput(true);//получить ответ
+
+        String requestBody = "{\n" +               //формируем тело запроса  вориате  json (пары : члюч:значение экранируем под джава \n  \)
+                             "  \"username\":\"admin\",n" +
+                             "  \"password\":\"password123\n" +
+                             "   }";
+        BufferedWriter bufferedWriter = BufferedWriter(  //вставляем в запрос реквестбоди
+                new OutputStreamWriter(httpURLConnection.getOutputStream());
+
+                bufferedWriter.write(requestBody);
+
+                BufferedReader bufferedReader1 = new BufferedReader(
+                        new InputStreamReader(httpURLConnection.getInputStream()));//получение ответа. передаем входной поток
+
+        //считывае ответ
 
     }
 }
