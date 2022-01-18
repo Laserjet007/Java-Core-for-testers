@@ -1,5 +1,5 @@
 package lesson_6.socketexamples;
-
+//бронирование номеров пример
 import okhttp3.*;
 
 import java.io.IOException;
@@ -39,8 +39,20 @@ public class RestfulBookerExamples {
        // token = token.replace("\"", "");//избавляемся от кавычки
        // token = token.replace("}", "");   // избавляемся от закрывающей точки
 
-        token = token.replaceAll()//предидущие выдергивание по символам можно  обработать регулярным выражением
+        token = token.replaceAll("[\"}]", "");//предидущие выдергивание по символам можно  обработать регулярным выражением (шаблоном по которому система ищет совпадения) .. квадратные скобки означают выбор того чего надо заэкранировать... символы ничем не разделяются
 
         System.out.println(token);
+
+        String createBookingJson = "{\n" +    // теперь необходимо отправить токен букера для бронирования номера
+                "    \"firstname\" : \"Jim\",\n" +
+                "    \"lastname\" : \"Brown\",\n" +
+                "    \"totalprice\" : 111,\n" +
+                "    \"depositpaid\" : true,\n" +
+                "    \"bookingdates\" : {\n" +
+                "    \"checkin\" : \"2018-01-01\",\n" +
+                "    \"checkout\" : \"2019-01-01\"\n" +
+                "    },\n" +
+                "    \"additionalneeds\" : \"Breakfast\"\n" +
+                "}";
     }
 }
