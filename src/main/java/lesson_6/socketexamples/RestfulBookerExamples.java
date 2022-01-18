@@ -54,5 +54,16 @@ public class RestfulBookerExamples {
                 "    },\n" +
                 "    \"additionalneeds\" : \"Breakfast\"\n" +
                 "}";
+
+        RequestBody requestCreateBookingBody = RequestBody.create(createBookingJson, MediaType.parse("JSON")); //формируем запрос  так же как выше делал
+
+// все данные берутся из апи
+
+        Request requestCreateBooking = new Request.Builder()
+            .url("restful-booker.herokuapp.com/booking")
+            .addHeader("Content-Type", "application/json")
+            .addHeader("Accept", "application/json")
+            .addHeader("Cookie", String.format("token=%s", token))
+                .post()
     }
 }
