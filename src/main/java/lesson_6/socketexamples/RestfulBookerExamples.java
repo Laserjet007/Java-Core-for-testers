@@ -1,5 +1,6 @@
 package lesson_6.socketexamples;
-//бронирование номеров пример
+//бронирование номеров пример работы ок
+//пример работы конекшена окаштитипи
 import okhttp3.*;
 
 import java.io.IOException;
@@ -64,6 +65,12 @@ public class RestfulBookerExamples {
             .addHeader("Content-Type", "application/json")
             .addHeader("Accept", "application/json")
             .addHeader("Cookie", String.format("token=%s", token))
-                .post()
+            .post(requestCreateBookingBody)
+            .build();
+
+        Response response = okHttpClient.newCall(requestCreateBooking).execute();//в клиенте  делаем новый вызов и выпол няем его
+
+        System.out.println(response.body().string());//вывод из запроса тела реализую строкой
+// результатом сформировывается айдишник в джейсоне и инфа которую туда накидал
     }
 }

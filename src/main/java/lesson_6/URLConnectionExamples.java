@@ -1,4 +1,5 @@
 package lesson_6;
+//пример работы юрл конекшена
 /*
 import java.io.*;
 import java.net.HttpURLConnection;
