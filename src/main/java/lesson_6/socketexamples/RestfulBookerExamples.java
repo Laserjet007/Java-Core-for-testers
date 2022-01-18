@@ -1,8 +1,8 @@
 package lesson_6.socketexamples;
 //бронирование номеров пример работы ок
 //пример работы конекшена окаштитипи
+/*
 import okhttp3.*;
-
 import java.io.IOException;
 
 public class RestfulBookerExamples {
@@ -74,3 +74,4 @@ public class RestfulBookerExamples {
 // результатом сформировывается айдишник в джейсоне и инфа которую туда накидал
     }
 }
+*/
