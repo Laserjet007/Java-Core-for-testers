@@ -9,7 +9,7 @@ import okhttp3.Response;
 
 import java.io.IOException;
 
-import static java.nio.file.attribute.AclEntry.newBuilder;
+
 
 public class OkHTTPExamples {
     public static void main(String[] args) throws IOException {
