@@ -1,6 +1,6 @@
 package lesson_6.socketexamples;
 
-//соединение с помощью библиотеки
+//соединение с помощью библиотеки (вроде как легче и читабильней обычных урл конекшенов)
 /*
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
