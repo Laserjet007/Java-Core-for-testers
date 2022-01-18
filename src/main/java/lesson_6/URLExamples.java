@@ -1,7 +1,7 @@
 package lesson_6;
 
 //подключение по url  адрксу
-
+/*
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -20,3 +20,4 @@ public class URLExamples {
          URL url1 = new URL("https", "geekbrains.ru", 80, "/courses" );
     }
 }
+*/

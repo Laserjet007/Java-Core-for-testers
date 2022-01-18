@@ -1,5 +1,5 @@
-/*package lesson_6;
-
+package lesson_6;
+/*
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;

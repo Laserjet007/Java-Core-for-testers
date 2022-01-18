@@ -1,7 +1,7 @@
 package lesson_6.socketexamples;
 
-/*задача клиента отправить строку на сервер и ожидать ответа обратно (делаем простенько из консоли ввод)
-public class ClientApp {
+//задача клиента отправить строку на сервер и ожидать ответа обратно (делаем простенько из консоли ввод)
+/*public class ClientApp {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);//указываем поток из которого сканер будет получать (наша консолька)
 

@@ -1,7 +1,7 @@
 package lesson_6.socketexamples;
 
-/*вариант когда сервет получает строчку и отправляет ее обратно (простенький сервер)
-public class ServerApp {
+//вариант когда сервет получает строчку и отправляет ее обратно (простенький сервер)
+/*public class ServerApp {
     public static void main(String[] args) {
         try (ServerSocket serverSocket = new ServerSocket(2222)) {  //сокет из сервера (обозначается виртуальный порт цифрами)
             System.out.println("Server Work! ожидает соединения");
@@ -26,4 +26,5 @@ public class ServerApp {
         }
 
     }
-}*/
+}
+*/
