@@ -10,8 +10,11 @@ public class Main {
        ObjectMapper objectMapper = new  ObjectMapper();  //класс ObjectMapper позволяет сравнивать данные что есть в джейсоне с тем с чем работаем в джаве
 
         Car car = new Car("Red", "Porsche");
-        String carFromJSON = objectMapper.writeValueAsString(car);  // переделываем обьект кар в джейсон обьект
+        String carFromJSON = objectMapper.writeValueAsString(car);  // переделываем обьект кар в джейсон обьект c помощью objectMapper
         System.out.println(carFromJSON);
+
+
+        //проделать перидущую операцию и собрать обьект из джейсона
 
     }
 }
