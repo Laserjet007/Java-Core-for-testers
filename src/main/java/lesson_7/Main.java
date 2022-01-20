@@ -36,5 +36,11 @@ public class Main {
         List<Car> carsFromJSON = objectMapper.readValue(carListJSON, new TypeReference<ArrayList<Car>>() { });//List<Car> carsFromJSON-сохраняем в список .передаем как список, причем типезированный (ссылочный тип com.fasterxml.jackson.core....)
         System.out.println(carsFromJSON);
 
+        //Еще один вариант со своей особенностью
+        String jsonCarAfterUpdate = "{\"color\":\"Белый\",\"type\":\"Lada\",\"year\":\"Lada\"}";//берется некий джейсон и из него необходимо к примеру собрать обьект
+
+
+
+
     }
 }
