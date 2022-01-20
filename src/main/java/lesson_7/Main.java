@@ -38,9 +38,10 @@ public class Main {
 
         //Еще один вариант со своей особенностью
         String jsonCarAfterUpdate = "{\"color\":\"Белый\",\"type\":\"Lada\",\"year\":\"Lada\"}";//берется некий джейсон и из него необходимо к примеру собрать обьект
+     // закрываем для второго варианта:
+        //objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);//конфигурируем обжектмеджек таким образом что бы он не обрабатывал YEAR. десерилизируем и изменяем труе на фальсе в FAIL_ON_UNKNOWN_PROPERTIES
+        Car carAfterUpdate = objectMapper.readValue(jsonCarAfterUpdate, Car.class);
 
-
-
-
+        System.out.println(jsonCarAfterUpdate); //{"color":"Белый","type":"Lada","year":"Lada"}  в итоге получается такой джейсон
     }
 }

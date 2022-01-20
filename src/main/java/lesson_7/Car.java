@@ -1,5 +1,10 @@
 package lesson_7; //обьекты превращаем в джесон что бы превращать затем их в обьектики
 
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+//вариант второй:если нужно, при преобразовании джейсона, проигнорировать класс кар  то можно добавить анотацию прямо под классом - @JsonIgnoreProperties(ignoreUnknown = true) (выбросить файл year из проверки)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Car {   //задаем цвет и тип
     private String color;
     private String type;
