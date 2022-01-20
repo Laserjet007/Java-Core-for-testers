@@ -42,6 +42,6 @@ public class Main {
         //objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);//конфигурируем обжектмеджек таким образом что бы он не обрабатывал YEAR. десерилизируем и изменяем труе на фальсе в FAIL_ON_UNKNOWN_PROPERTIES
         Car carAfterUpdate = objectMapper.readValue(jsonCarAfterUpdate, Car.class);
 
-        System.out.println(jsonCarAfterUpdate); //{"color":"Белый","type":"Lada","year":"Lada"}  в итоге получается такой джейсон
+        System.out.println(carAfterUpdate); //{"color":"Белый","type":"Lada","year":"Lada"}  в итоге получается такой джейсон
     }
 }
