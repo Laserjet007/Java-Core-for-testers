@@ -3,6 +3,10 @@ package lesson_7;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 //пишим клиенскую часть приложения которая обращается к серверу и получает с него данные и их отображать
 
 public class Main {
@@ -18,6 +22,16 @@ public class Main {
         System.out.println(car1); //из за реализации ту стринг из маин - пишим просто кар1
 
        // ВАРИАНТ НЕ СО СТРОКОЙ КАК В ПРЕДИДУЩЕМ ВАРИАНТЕ - А С СПИСКОМ (вариант посложнее)
+
+//создаем список и заполняем его (создаем стрингу с ждейсон формата и далее распарсить ее)
+        List<Car> carList = new ArrayList<>(Arrays.asList(new Car("Green","Ferrari"),
+                new Car("Gray", "BMW")));
+        System.out.println(carList);
+
+        String carListJSON = objectMapper.writeValueAsString(carList);
+        System.out.println(carList);
+
+
 
 
     }
