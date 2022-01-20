@@ -1,6 +1,7 @@
 package lesson_7;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.ArrayList;
@@ -29,10 +30,11 @@ public class Main {
         System.out.println(carList);
 
         String carListJSON = objectMapper.writeValueAsString(carList);
-        System.out.println(carList);
+        System.out.println(carListJSON);
 
-
-
+//теперь наобарот из джейсона распарсить в список обьектов
+        List<Car> carsFromJSON = objectMapper.readValue(carListJSON, new TypeReference<ArrayList<Car>>() { });//List<Car> carsFromJSON-сохраняем в список .передаем как список, причем типезированный (ссылочный тип com.fasterxml.jackson.core....)
+        System.out.println(carsFromJSON);
 
     }
 }
