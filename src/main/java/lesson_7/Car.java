@@ -8,8 +8,17 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Car {   //задаем цвет и тип
     private String color;
-    @JsonProperty("model")//для того что бы из model прочитать type не изменяя кода, в примере с рефакторингом, ставим анотацию @JsonProperty
+    @JsonProperty("model")//для того что бы из model прочитать type не изменяя кода, в примере с рефакторингом, ставим анотацию @JsonProperty (теперь библиотека джексона будет понимать что тайп это подель)
     private String type;
+    private Seat seat;
+
+    public Seat getSeat() {
+        return seat;
+    }
+
+    public void setSeat(Seat seat) {
+        this.seat = seat;
+    }
 
     public Car(String color, String type) { //делаем конструктор
         this.color = color;
@@ -41,6 +50,7 @@ public class Car {   //задаем цвет и тип
         return "Car{" +
                 "color='" + color + '\'' +
                 ", type='" + type + '\'' +
+                ", seat=" + seat +
                 '}';
     }
 }

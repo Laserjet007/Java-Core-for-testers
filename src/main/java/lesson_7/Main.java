@@ -46,8 +46,16 @@ public class Main {
      //пример когда програмист рефакторит одно из полей (не будет ошибки потому что стоит игнор)
         String jsonCarAfterRefactoring = "{\"color\":\"Белый\",\"model\":\"Lada\"}";
         Car carAfterRefactoring = objectMapper.readValue(jsonCarAfterRefactoring, Car.class);
-        System.out.println(carAfterRefactoring); //Car{color='Белый', type='null'}    в итоге получается такой джейсон
+        System.out.println(carAfterRefactoring); //Car{color='Белый', type='null'}    в итоге получается такой джейсон, а после рефакторинга и вставки анотации в конструкторе получается Car{color='Белый', type='Lada'}
 
-
+//пример следующий - создаем автомобиль с сиденьями (передаем два параметра + засетить сиденья)
+        Car carWithSeat = new Car("Black", "Ford");
+        carWithSeat.setSeat(new Seat(5));//добавляем сидение
+     //теперь превращаем это в джейсон и затем обратно
+        String carsWithSeatJSON = objectMapper.writeValueAsString(carWithSeat);
+        System.out.println(carsWithSeatJSON);
+//преобразование в обратную сторону (обьект из джейсона)
+        Car carWithSeatFromJSON = objectMapper.readValue(carsWithSeatJSON, Car.class);
+        System.out.println(carWithSeatFromJSON);
     }
 }
