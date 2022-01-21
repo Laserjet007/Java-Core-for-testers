@@ -41,7 +41,13 @@ public class Main {
      // закрываем для второго варианта:
         //objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);//конфигурируем обжектмеджек таким образом что бы он не обрабатывал YEAR. десерилизируем и изменяем труе на фальсе в FAIL_ON_UNKNOWN_PROPERTIES
         Car carAfterUpdate = objectMapper.readValue(jsonCarAfterUpdate, Car.class);
+        System.out.println(carAfterUpdate); //Car{color='Белый', type='Lada'}   в итоге получается такой джейсон
 
-        System.out.println(carAfterUpdate); //{"color":"Белый","type":"Lada","year":"Lada"}  в итоге получается такой джейсон
+     //пример когда програмист рефакторит одно из полей (не будет ошибки потому что стоит игнор)
+        String jsonCarAfterRefactoring = "{\"color\":\"Белый\",\"model\":\"Lada\"}";
+        Car carAfterRefactoring = objectMapper.readValue(jsonCarAfterRefactoring, Car.class);
+        System.out.println(carAfterRefactoring); //Car{color='Белый', type='null'}    в итоге получается такой джейсон
+
+
     }
 }
