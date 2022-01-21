@@ -53,9 +53,9 @@ public class Main {
         carWithSeat.setSeat(new Seat(5));//добавляем сидение
      //теперь превращаем это в джейсон и затем обратно
         String carsWithSeatJSON = objectMapper.writeValueAsString(carWithSeat);
-        System.out.println(carsWithSeatJSON);
+        System.out.println(carsWithSeatJSON);//{"color":"Black","seat":{"name":"сидение","seatCount":5},"model":"Ford"}  в итоге получается такой джейсон
 //преобразование в обратную сторону (обьект из джейсона)
         Car carWithSeatFromJSON = objectMapper.readValue(carsWithSeatJSON, Car.class);
-        System.out.println(carWithSeatFromJSON);
+        System.out.println(carWithSeatFromJSON);//Car{color='Black', type='Ford', seat=Seat{seatCount=5} CarElement{name='сидение'}}
     }
 }
