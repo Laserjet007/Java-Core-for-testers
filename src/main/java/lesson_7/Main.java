@@ -57,5 +57,10 @@ public class Main {
 //преобразование в обратную сторону (обьект из джейсона)
         Car carWithSeatFromJSON = objectMapper.readValue(carsWithSeatJSON, Car.class);
         System.out.println(carWithSeatFromJSON);//Car{color='Black', type='Ford', seat=Seat{seatCount=5} CarElement{name='сидение'}}
+
+
+
+
+
     }
 }
