@@ -1,4 +1,4 @@
-package project;
+package lesson_7.project;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import okhttp3.HttpUrl;
@@ -61,6 +61,12 @@ public class AccuweatherModel implements WeatherModel {   //наследую Wea
         }
 
     }
+
+    @Override
+    public void getSavedToDBWeather() {
+
+    }
+
     private String detectCityKey(String selectedCity) throws IOException {   //api запрос
         //http://dataservice.accuweather.com/lacations/v1/cities/autocomplete/
         HttpUrl httpUrl = new HttpUrl.Builder()      //собираю запрос
@@ -89,4 +95,3 @@ public class AccuweatherModel implements WeatherModel {   //наследую Wea
     }
 
 }
-

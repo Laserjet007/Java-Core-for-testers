@@ -66,15 +66,13 @@ select  s.name, f.name
 from faculties f
 inner  join students s on s.faculty_id = f.id;
 
-select * from  students where name = 'Georgy';
+select * from  students where name = 'нонон';
 
-create table weather (id integer primary key autoincrement , city text, localdate text, temperature real);]]></console>
+create table weather (id integer primary key autoincrement , city text, localdate text, temperature real);  //создаем таблицу погоды (число с плавующей точкой)]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="f1ec8de6-8e50-4162-89a2-5f16652d08e5" object-ref="consoles/Connection" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="f1ec8de6-8e50-4162-89a2-5f16652d08e5" />

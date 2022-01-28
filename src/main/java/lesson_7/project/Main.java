@@ -1,4 +1,4 @@
-package project;
+package lesson_7.project;
 
 import java.io.IOException;
 
