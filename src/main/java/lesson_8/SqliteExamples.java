@@ -45,24 +45,24 @@ public class SqliteExamples {
             PreparedStatement preparedStatement = connection.prepareStatement(      // PreparedStatement - заготовка при выполнении программы в нее можно передавать значения
                     "insert into students (name, score, faculty_id) values (?, ?, ?)");
             connection.setAutoCommit(false);
-            preparedStatement.setString(1, "Олег");                 //заполняем переменные ( вопросительные знаки)
+            preparedStatement.setString(1, "Оноеон");                 //заполняем переменные ( вопросительные знаки)
             preparedStatement.setInt(2, 10);
             preparedStatement.setInt(3, 12);
-            preparedStatement.addBatch();
-            preparedStatement.setString(1, "Anton");
+            preparedStatement.addBatch();                             //первая часть закончилась
+            preparedStatement.setString(1, "нренон");
             preparedStatement.setInt(2, 10);
             preparedStatement.setInt(3, 12);
-            preparedStatement.addBatch();
-            preparedStatement.setString(1, "Anton");
+            preparedStatement.addBatch();                             //2 часть закончилась
+            preparedStatement.setString(1, "нононоевн");
             preparedStatement.setInt(2, 10);
             preparedStatement.setInt(3, 12);
-            preparedStatement.addBatch();
-            preparedStatement.executeBatch();
+            preparedStatement.addBatch();                              //3 часть закончилась
+            preparedStatement.executeBatch();                            //обработай всю пачку
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-        } finally {
+        } finally {                                          //закрываем блок
             try {
                 connection.close();
             } catch (SQLException throwables) {
